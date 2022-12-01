@@ -1,0 +1,16 @@
+1.console.firebase
+2.create new project
+3.xx enable button
+4.</>
+5.register
+6.npm install firebase / also install react-router-dom
+7. copy initialize code for firebase
+8.create firebase.config.js file in public/firebase and copy code
+9. add export default app in firebase.config.js
+10. go to react router dom and set router
+11. install react boostrap
+12. import boostrap css in the index.js
+
+-----Router setup-----
+
+13 .
