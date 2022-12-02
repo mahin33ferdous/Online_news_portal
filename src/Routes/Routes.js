@@ -14,7 +14,7 @@ export const router= createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path:'/cet:id',
+                path:'/cet/:id',
                 element:<Cetagory></Cetagory>
             }
         ]
