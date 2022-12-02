@@ -14,3 +14,7 @@
 -----Router setup-----
 
 13 .router set up
+14. make another project folder for server
+15. install express.js- npm init -y
+16.create index.js file 
+17.nodemon index.js
