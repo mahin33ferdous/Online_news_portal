@@ -15,13 +15,13 @@ const Main = () => {
         <Header></Header>
         <Container>
           <Row>
-            <Col>
+            <Col lg="2" className='d-none d-lg-block'>
             <LeftNav></LeftNav>
             </Col>
-            <Col>
+            <Col lg="7">
             <Outlet></Outlet>
             </Col>
-            <Col>
+            <Col lg='3'>
             <RightNav></RightNav>
             </Col>
           </Row>
