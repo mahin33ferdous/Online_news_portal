@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import LeftNav from '../LeftSideBar/LeftNav';
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
         <div>
            <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Nes Portal</Navbar.Brand>
+        <Navbar.Brand href=""><Link to='/'> Nes Portal</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
