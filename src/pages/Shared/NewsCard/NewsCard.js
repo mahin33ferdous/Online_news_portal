@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image'
-import { FaRegBookmark, FaShareAlt } from 'react-icons/fa';
+import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const NewsCard = ({news}) => {
-    const {_id,title,total_views,author,details,image_url}=news;
+    const {_id,title,total_view,author,details,image_url,rating}=news;
     return (
         <Card className='mb-5'>
         <Card.Header className='d-flex justify-content-between align-items-center'>
@@ -37,6 +37,16 @@ const NewsCard = ({news}) => {
           </Card.Text>
          
         </Card.Body>
+        <Card.Footer className='d-flex justify-content-between'>
+          <div>
+            <FaStar className='text-warning me-2'></FaStar>
+            <span>{rating.number}</span>
+          </div>
+          <div>
+            <FaEye className='me-2'></FaEye>
+            <span>{total_view}</span>
+          </div>
+        </Card.Footer>
       </Card>
     );
 };
