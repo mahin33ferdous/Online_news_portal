@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,12 +10,17 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import LeftNav from '../LeftSideBar/LeftNav';
 
 const Header = () => {
-  const {user}=useContext(AuthContext)
+  const {user ,logOut}=useContext(AuthContext)
+  const handleLogOut=()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>console.error(error))
+  }
     return (
         <div>
            <Navbar collapseOnSelect className='mb-4' expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href=""><Link to='/'> Nes Portal</Link></Navbar.Brand>
+        <Navbar.Brand href=""><Link to='/'> News Portal</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -34,11 +39,23 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
+            {/* <Nav.Link href="#deets">{user?.displayName}</Nav.Link> */}
             <Nav.Link eventKey={2} href="#memes">
-            {user.photoURL?
+              {
+                user?.uid ? //at first load properties is null
+                <>
+                  <span>{user?.displayName}</span>
+                  <Button variant='light' onClick={handleLogOut}>Log Out</Button>
+                </>
+                :
+                <>
+                           <Link to='/login'>Log in</Link>
+                           <Link to='register'>Register</Link>
+                </>
+              }
+            {user?.photoURL?
               <Image
-                 style={{height: '40px'}} roundedCircle src={user.photoURL}
+                 style={{height: '40px'}} roundedCircle src={user?.photoURL}
               
               ></Image>
               :<FaUser></FaUser>
